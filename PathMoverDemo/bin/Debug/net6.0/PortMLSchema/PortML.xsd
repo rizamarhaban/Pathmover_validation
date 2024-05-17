@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+		   targetNamespace="http://o2des.com/portml-namespace"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="PortML">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Metadata">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Company" type="xs:string" />
+							<xs:element name="Copyright" type="xs:string" />
+						</xs:sequence>
+						<xs:attribute name="Language" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DesignSheet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PlotScale" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:attribute name="Value" type="xs:unsignedShort" use="required" />
+									<xs:attribute name="Unit" type="xs:string" use="required" />
+									<xs:attribute name="OffsetX" type="xs:decimal" use="optional" />
+									<xs:attribute name="OffsetY" type="xs:decimal" use="optional" />
+									<xs:attribute name="DrawingScale" type="xs:decimal" use="optional" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BackgroundImage" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:attribute name="ImageUrl" type="xs:string" use="required" />
+									<xs:attribute name="Width" type="xs:string" use="required" />
+									<xs:attribute name="Height" type="xs:decimal" use="required" />
+									<xs:attribute name="OffsetX" type="xs:decimal" use="required" />
+									<xs:attribute name="OffsetY" type="xs:decimal" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Modules">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" maxOccurs="unbounded" name="Module">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="Children">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element maxOccurs="unbounded" name="Child">
+																	<xs:complexType>
+																		<xs:attribute name="Name" type="xs:string" use="optional" />
+																		<xs:attribute name="ModuleReferenceId" type="xs:string" use="required" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="StaticProperties">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="1" maxOccurs="unbounded" name="Setter">
+																	<xs:complexType>
+																		<xs:attribute name="Property" type="xs:string" use="required" />
+																		<xs:attribute name="Value" type="xs:string" use="required" />
+																		<xs:attribute name="Type" use="required">
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:enumeration value="number" />
+																					<xs:enumeration value="decimal" />
+																					<xs:enumeration value="text" />
+																					<xs:enumeration value="endlotsposition" />
+																					<xs:enumeration value="boolean" />
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" maxOccurs="1" name="BoundaryPoints">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="1" maxOccurs="unbounded" name="Point">
+																	<xs:complexType>
+																		<xs:attribute name="X" type="xs:float" use="required" />
+																		<xs:attribute name="Y" type="xs:float" use="required" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="Type" type="xs:string" use="required" />
+												<xs:attribute name="Name" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Layout">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Infrastructure">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Links">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Paths">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element minOccurs="0" maxOccurs="unbounded" name="Path">
+																				<xs:complexType>
+																					<xs:attribute name="Type" use="required">
+																						<xs:simpleType>
+																							<xs:restriction base="xs:string">
+																								<xs:enumeration value="PerpendicularTwoWayWorkingLane" />
+																								<xs:enumeration value="TwoWayWorkingLane" />
+																								<xs:enumeration value="WorkingLane" />
+																								<xs:enumeration value="PassingLane" />
+																								<xs:enumeration value="OneWayPassingLane" />
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																					<xs:attribute name="StartingControlPointId" type="xs:string" use="required" />
+																					<xs:attribute name="EndingControlPointId" type="xs:string" use="required" />
+																					<xs:attribute name="NumberOfLanes" type="xs:integer" use="required" />
+																					<xs:attribute name="LaneCapacity" type="xs:integer" use="required" />
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Locations">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" maxOccurs="unbounded" name="Location">
+																	<xs:complexType>
+																		<xs:attribute name="ReferenceId" type="xs:string" use="required" />
+																		<xs:attribute name="StartingPointX" type="xs:decimal" use="required" />
+																		<xs:attribute name="StartingPointY" type="xs:decimal" use="required" />
+																		<xs:attribute name="EndingPointX" type="xs:decimal" use="optional" />
+																		<xs:attribute name="EndingPointY" type="xs:decimal" use="optional" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:decimal" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

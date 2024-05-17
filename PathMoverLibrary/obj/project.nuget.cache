@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bl2b4oqHcbpmxKngvWkXP70GYlWC6g4O8LpxHHVpsupwNBxjbCTy8jSzH/i4w+4wPYJ8NrvyldL1M9m/+5LzYQ==",
+  "success": true,
+  "projectFilePath": "F:\\Desktop\\PathMover Package\\PathMoverLibrary\\PathMoverLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\浪荡凡少\\.nuget\\packages\\mathnet.numerics\\4.8.1\\mathnet.numerics.4.8.1.nupkg.sha512",
+    "C:\\Users\\浪荡凡少\\.nuget\\packages\\o2desnet\\3.7.1\\o2desnet.3.7.1.nupkg.sha512",
+    "C:\\Users\\浪荡凡少\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}
