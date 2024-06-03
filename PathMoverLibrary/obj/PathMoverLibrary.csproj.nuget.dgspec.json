@@ -1,32 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Desktop\\PathMover Package\\PathMoverLibrary\\PathMoverLibrary.csproj": {}
+    "C:\\Projects\\Pathmover_validation\\PathMoverLibrary\\PathMoverLibrary.csproj": {}
   },
   "projects": {
-    "F:\\Desktop\\PathMover Package\\PathMoverLibrary\\PathMoverLibrary.csproj": {
+    "C:\\Projects\\Pathmover_validation\\PathMoverLibrary\\PathMoverLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Desktop\\PathMover Package\\PathMoverLibrary\\PathMoverLibrary.csproj",
+        "projectUniqueName": "C:\\Projects\\Pathmover_validation\\PathMoverLibrary\\PathMoverLibrary.csproj",
         "projectName": "PathMoverLibrary",
-        "projectPath": "F:\\Desktop\\PathMover Package\\PathMoverLibrary\\PathMoverLibrary.csproj",
-        "packagesPath": "C:\\Users\\浪荡凡少\\.nuget\\packages\\",
-        "outputPath": "F:\\Desktop\\PathMover Package\\PathMoverLibrary\\obj\\",
+        "projectPath": "C:\\Projects\\Pathmover_validation\\PathMoverLibrary\\PathMoverLibrary.csproj",
+        "packagesPath": "C:\\Users\\isemrm\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Pathmover_validation\\PathMoverLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\浪荡凡少\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\isemrm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://nuget.o2des.com/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -34,11 +40,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "O2DESNet": {
               "target": "Package",
@@ -57,11 +68,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
